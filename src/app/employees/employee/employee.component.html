@@ -1,0 +1,41 @@
+<form [formGroup] = "service.form" (ngSubmit)="onSubmit()" class="normal-form">
+    <mat-card>
+    <div class ='controles-container'>
+        <input type = 'hidden' formControlName="$key">
+        <mat-form-field>
+            <input formControlName="FirstName" matInput placeholder="FirstName">
+            <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="LastName" matInput placeholder="LastName">
+            <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="email" matInput placeholder="Email">
+            <mat-error>required</mat-error>
+            <mat-error>Invalid Email</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="PhoneNumber" matInput placeholder="PhoneNumber">
+            <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="EmployeeId" matInput placeholder="EmployeeId">
+            <mat-error>This field is required</mat-error>
+        </mat-form-field>
+    </div>
+    <BR/>
+    <BR/>
+    <BR/>
+    <mat-card-actions>
+        <div class="button-row">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!service.form.valid">Submit</button>
+            <button mat-raised-button color="warn" (click)="onClear()">Clear</button>  
+            </div>
+    </mat-card-actions>
+   
+</mat-card>
+    
+
+    
+    </form>

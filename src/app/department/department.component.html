@@ -1,0 +1,34 @@
+<form [formGroup] = "service.form" (ngSubmit)="onSubmit()" class="normal-form">
+    <mat-card>
+    <div class ='controles-container'>
+        <input type = 'hidden' formControlName="$key">
+        <mat-form-field>
+            <input formControlName="department" matInput placeholder="departmentname">
+            <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="ProjectName" matInput placeholder="project">
+            <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="Role" matInput placeholder="role">
+            <mat-error>required</mat-error>
+            <mat-error>Invalid role</mat-error>
+        </mat-form-field>
+        
+    </div>
+    <BR/>
+    <BR/>
+    <BR/>
+    <mat-card-actions>
+        <div class="button-row">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!service.form.valid">Submit</button>
+            
+            </div>
+    </mat-card-actions>
+   
+</mat-card>
+    
+
+    
+    </form>
